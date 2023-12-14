@@ -1,0 +1,46 @@
+# LEARN GO: FUNCTIONS
+---------------------
+
+* What is a Function?
+---------------------
+In programming, a function is a block of code designed to be reused. As programmers, we want to find solutions to problems, but we also don’t want to do additional work when it’s not 
+necessary. Let’s start with an example, say we needed to double a number:
+
+	x := 5 
+	doubleX := 5 * 2
+
+Great, but what if we need to double another number?
+
+	y := 3 
+	doubleY := 3 * 2
+
+And another??
+
+	z := 25
+	doubleZ := 25 * 2
+
+These short bits of code could build up to a lot of time and effort (just to double a number!) That’s where functions can really help out. We can use a function to define the logic for us 
+to perform this task, and call it (execute its code) when we need it:
+
+	func doubleNum(num int) int {
+  		return num * 2
+	}
+
+Don’t worry too much about the syntax for now, but it should look pretty familiar since we’ve worked with the main() function many times before (Reminder: one of the major differences is 
+that the main() doesn’t have to be called, because the compiler already knows to run it). Our doubleNum() function will allow us to plug in numbers and it returns an integer that’s twice 
+the number given! Also, if our outputs start looking weird, e.g. our numbers aren’t doubling, but tripling instead, we know that the cause is likely our function. We can jump straight to 
+fixing our function’s code rather than looking through each statement like we had for doubleX, doubleY, and doubleZ. Our code becomes much more streamlined:
+
+	fmt.Println(doubleNum(x)) // Prints: 10
+	fmt.Println(doubleNum(y)) // Prints: 6
+	fmt.Println(doubleNum(z)) // Prints: 50
+
+We’ll go over more examples of how to create and use functions, when they can be accessed, and how to defer within a function later in this lesson. In a nutshell, we’ll see how functions 
+function.
+
+* Instructions
+--------------
+Take a look at the provided GIF. It shows a function, named addOneSide(), adding an additional side to different shape inputs. Notice how there is only one function, represented by the 
+box, that is used to transform individual shapes (inputs) into new shapes (outputs).
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
