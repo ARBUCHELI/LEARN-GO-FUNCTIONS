@@ -124,6 +124,116 @@ func main() {
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Scope
+-------
+A function definition creates something called a scope. We’ve referenced scope before in our conditionals exercise about scoped short declarations but it’s important to recognize how 
+scope plays a huge role in functions and programming overall!
+
+Scope is a concept that refers to where the values and functions are defined and where they can be accessed. For instance, when a variable is defined within a function, that variable is 
+only accessible within that function. When we try to access that same variable from a different function, we get an error because we can’t do it. Each function has its own specific scope, 
+take a look at the code:
+
+package main
+
+import "fmt"
+
+func performAddition() {
+  x := 5
+  y := 7
+  fmt.Println("The sum of", x, "and", y, "is", x + y)
+}
+
+func main() {
+  performAddition()
+  fmt.Println("What if", x, "was different?")
+}
+
+The above code exits with the following error:
+
+./main.go:12:26: undefined: x
+
+The error is raised because the x in main()‘s print statement fmt.Println("What if", x, "was different?") is in a different scope than the defined x inside performAddition(). It’s not 
+possible to directly refer to performAddition()‘s x variable in the scope of main().
+
+There are three different scopes present in this example:
+
+	. The global scope, which contains the function definitions for main() and performAddition().
+
+	. performAddition() has a local scope, which defines x and y.
+
+	. main() has a local scope also. It can access performAddition() because that’s defined on the same scope level as main() but can’t access the internals of performAddition‘s scope 
+	(i.e., x or y).
+
+This differentiation of scope keeps the namespace, the available variables and keywords, cleaner as a result. You can only refer to variables or functions defined within a specific 
+namespace.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+In main.go we have a function that creates the instructions for the start of a game. We’re trying to access the string so that we can print it, but it’s in a different scope from the one 
+our print statement is.
+
+Move the fmt.Println(instructions) statement from the main() function body into startGame()‘s body.
+
+
+Hint
+Remove the fmt.Println() from main() and then put it in startGame():
+
+func startGame() {
+  instructions := "Press enter to start..."  
+  fmt.Println(instructions)
+}
+
+main.go
+-------
+package main
+
+import "fmt"
+
+func startGame() {
+  instructions := "Press enter to start..." 
+  fmt.Println(instructions)
+  
+  
+}
+
+func main() {
+  startGame()  
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
