@@ -293,7 +293,125 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Using Function Parameters
+---------------------------
+We know that functions can return information, but we can also provide functions with information using parameters. Function parameters are variables that are used within the function to 
+use in some sort of computation or calculation. When calling a function, we give arguments, which are the values that we want those parameter variables to take. We give our function 
+parameters types when defining the function:
 
+func multiplier(x int32, y int32) int32 {
+  return x * y
+}
+
+In the function above, we added information inside our parentheses, that is where parameters belong. Our first parameter is x and it has a type of int32. Our second parameter, y also has 
+a type of int32. After the parentheses is something we’ve seen before: the type of our return value. Since both parameters have the same type, we could write it as:
+
+func multiplier(x, y int32) int32 {
+  return x * y
+}
+
+See how we wrote int32 once at the end of our list of parameters instead of writing int32 after each parameter?
+
+Let’s now call our function with literal values as arguments:
+
+func main() {
+  var product int32
+  product = multiplier(25, 4)
+  fmt.Println(product) // Prints: 100
+}
+
+We can also call our function with variables as arguments:
+
+func main() {
+  var mainX, mainY, newProduct int32
+  mainX = 6
+  mainY = 7
+  newProduct = multiplier(mainX, mainY)
+  fmt.Println(newProduct) // Prints: 42
+}
+
+Notice in both cases, our functions worked as expected with the provided arguments! But, it’s important that we provide enough arguments. Our multiplier() function has two parameters, so 
+it expects two arguments. If we don’t, the Go compiler throws an error that reads not enough arguments in call to (functionName) or in our case: not enough arguments in call to 
+multiplier.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+We’ve created a function called computeMarsYears() that will calculate the number of Martian years someone has lived based on the number of Earth years they’ve lived. We hard-coded 
+earthYears to be 30 within the definition of computeMarsYears()
+
+First let’s make earthYears one of the parameters for computeMarsYears() by adding it between the parentheses. Give the earthYears parameter the type int.
+
+
+Hint
+Give computeMarsYears() a parameter with the following syntax:
+
+func computeMarsYears(earthYears int) int {
+  // ...
+}
+
+Checkpoint 2 Passed
+2.
+There are two errors currently in our terminal, let’s get rid of one of them.
+
+In computeMarsYears(), we still have earthYears set to 30, we need to remove it since it is now a parameter (this will get rid of the error that reads: no new variables on left side 
+of :=).
+
+
+Hint
+Simply remove the line of code with earthYears := 30. It would be OK to comment it, but you should feel enough conviction here to completely remove the line.
+
+You might also realize that Go’s compiler raises an error due to this redefinition. If it didn’t, this could be really confusing since we could potentially pass in an argument, only for 
+it to be overridden by the redefinition inside our function body! For example:
+
+func square (x int) int {
+  x := 5
+  return x * x
+}
+
+func main () {
+  fmt.Print(square(10)) // Prints: 25
+}
+
+Disclaimer, this would not work in Go, but the point is that we would get very confusing results if our arguments get redefined.
+
+Checkpoint 3 Passed
+3.
+We can now get rid of the last error not enough arguments in call to computeMarsYears.
+
+In main() use the myAge variable to pass that value as an argument to computeMarsYears().
+
+
+Hint
+Inside main() call computeMarsYears() with myAge using the following syntax:
+
+myMartianAge := computeMarsYears(myAge)
+
+main.go
+-------
+package main
+import "fmt"
+
+// Update marsYear so that it takes earthYears
+// As a parameter
+func computeMarsYears(earthYears int) int {
+  // Remove earthYears definition within marsYear
+  
+  earthDays := earthYears * 365
+  marsYears := earthDays / 687
+  return marsYears
+}
+
+func main() {
+  myAge := 25
+  
+  // Call `marsYear` with `myAge`
+  myMartianAge := computeMarsYears(myAge)
+  fmt.Println(myMartianAge)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
