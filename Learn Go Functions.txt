@@ -526,6 +526,161 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Multiple Return Values
+------------------------
+Functions also have the ability to return multiple values. Check out the example below:
+
+func GPA(midtermGrade float32, finalGrade float32) (string, float32) {
+  averageGrade := (midtermGrade + finalGrade) / 2
+  var gradeLetter string
+  if averageGrade > 90 {
+    gradeLetter = "A"
+  } else if averageGrade > 80 {
+    gradeLetter = "B"
+  } else if averageGrade > 70 {
+    gradeLetter = "C"
+  } else if averageGrade > 60 {
+    gradeLetter = "D"
+  } else {
+    gradeLetter = "F"
+  }
+
+  return gradeLetter, averageGrade 
+}
+
+Above, after the parentheses which contain our parameters, we need to provide the types of the multiple returns wrapped in their own set of parentheses. The GPA() function will return 2 
+values, the first value is a string and the second value is an int32. Also, when we return multiple values, we use a single return keyword followed by the values separated by commas: 
+gradeLetter, averageGrade. When we call the function:
+
+func main() {
+  var myMidterm, myFinal float32
+  myMidterm = 89.4
+  myFinal = 74.9
+  var myAverage float32
+  var myGrade string
+  myGrade, myAverage = GPA(myMidterm, myFinal)
+  fmt.Println(myAverage, myGrade) // Prints 82.12 B
+}
+
+We’re able to call GPA() with the necessary arguments and it returns back both 82.12 and B which we print to the terminal.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+We would like to use the information received in getLikesAndShares() inside our main() function.
+
+Update getLikesAndShares() to return two ints.
+
+
+Hint
+Update the function getLikesAndShares to give it a return type of two ints with the following syntax:
+
+func getLikesAndShares(postId int) (int, int) {
+  // ...
+}
+
+Checkpoint 2 Passed
+2.
+At the bottom of getLikesAndShares(), return the two variables likesForPost and sharesForPost.
+
+
+Hint
+Add the line return likesForPost, sharesForPost to the end of getLikesAndShares().
+
+Checkpoint 3 Passed
+3.
+In main() use the variables likes and shares to store the results from getLikesAndShares().
+
+
+Hint
+Change main() to update likes and shares:
+
+func main() {
+  var likes, shares int
+  likes, shares = getLikesAndShares(4)
+  // ...
+}
+
+main.go
+-------
+package main
+import "fmt"
+
+// Update getLikesAndShares to return two ints
+func getLikesAndShares(postId int)
+  (int, int) {
+  var likesForPost, sharesForPost int
+  switch postId {
+  case 1:
+    likesForPost = 5
+    sharesForPost = 7
+  case 2:
+    likesForPost = 3
+    sharesForPost = 11
+  case 3:
+    likesForPost = 22
+    sharesForPost = 1
+  case 4:
+    likesForPost = 7
+    sharesForPost = 9
+  }
+  fmt.Println("Likes: ", likesForPost, "Shares: ", sharesForPost)
+  // Add in a return for likesForPost and sharesForPost
+  return likesForPost, sharesForPost
+}
+
+func main() {
+  var likes, shares int
+  
+  // Update this line so the results of the function
+  // get stored in "likes" and "shares"
+  likes, shares = getLikesAndShares(4)
+  
+  if likes > 5 {
+    fmt.Println("Woohoo! We got some likes.")
+  }
+  if shares > 10 {
+    fmt.Println("We went viral!")
+  }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
