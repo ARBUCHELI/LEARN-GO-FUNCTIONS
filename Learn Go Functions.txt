@@ -413,6 +413,152 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Reusing Code with Functions
+-----------------------------
+Functions are great for code reuse, this means that when you find yourself repeating the same pattern over and over, it might be a good idea to try and abstract it into a function. When 
+you abstract your pattern into a function, this means we take the logic it takes to solve our problem and generalize it into a function to solve multiple problems. Let’s say you need to 
+square numbers:
+
+fmt.Println(5 * 5)
+fmt.Println(6 * 6)
+// ...
+fmt.Println(100 * 100)
+
+This can quickly get out of hand! Writing all of this down does not align with your programming chops since you can write a function to handle this problem!
+
+func squareNum(num int) {
+  fmt.Println(num * num)
+}
+
+squareNum() abstracts the logic for squaring a number into one single place! If you decide something about your formula is wrong, then you only have to change that code in a single 
+place!
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Our sophisticated mathematical program is developing some weird data, and we think it’s because some typos crept in while we were copying down our formula. This series of operations seems 
+to be very important to us, so let’s write a function that does it instead of calling it multiple times.
+
+Write a function called specialComputation() which takes a parameter x, a float64, and returns a float64.
+
+
+Hint
+Create the function with the following syntax:
+
+func specialComputation(x float64) float64 {
+
+}
+
+Checkpoint 2 Passed
+2.
+Inside the body of specialComputation() return the value computed by the following line of code:
+
+math.Log2(math.Sqrt(math.Tanh(x)))
+
+
+Hint
+Put the line return math.Log2(math.Sqrt(math.Tanh(x))) in the body of specialComputation().
+
+Checkpoint 3 Passed
+3.
+Now update the reassignments in main() to use specialComputation(), our function, instead of making each call to math.Log2(math.Sqrt(math.Tanh())) separately.
+
+Apply and reassign specialComputation() to each of a, b, c, and d. Remove the earlier computations which had some typos in them.
+
+
+Hint
+Remove the following lines of code from the program:
+
+  a = math.Log2(math.Sqrt(math.Tanh(a)))
+  b = math.Log( math.Sqrt(math.Tanh(b)))
+  c = math.Log(math.Sqrt( math.Tan(c) ))
+  d = math.Log2(math.Sqrt(math.Tanh(d)))
+
+Replace them using specialComputation():
+
+  a = specialComputation(a)
+  b = specialComputation(b)
+  c = specialComputation(c)
+  d = specialComputation(d)
+
+Checkpoint 4 Passed
+4.
+Well our science branch just got back to us explaining that we don’t actually need Tanh(), we actually just need Tan(). Inside specialComputation() change the part using math.Tanh() to use math.Tan() instead.
+
+
+Hint
+Your updated specialComputation() function should look like this:
+
+func specialComputation(x float64) float64 {
+  return math.Log2(math.Sqrt(math.Tan(x)))
+}
+
+main.go
+-------
+package main
+import (
+	"math"
+  "fmt"
+)
+
+// Define specialComputation() here
+
+func main() {
+  var a, b, c, d float64
+  a = .0214
+  b = 1.02
+  c = 0.312
+  d = 4.001
+  
+  // Replace the following four lines with specialComputation()
+  func specialComputation(x float64) float64 {
+    return math.Log2(math.Sqrt(math.Tan(x)))
+  }
+
+  a = specialComputation(a)
+  b = specialComputation(b)
+  c = specialComputation(c)
+  d = specialComputation(d)
+  
+  fmt.Println(a, b, c, d)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
