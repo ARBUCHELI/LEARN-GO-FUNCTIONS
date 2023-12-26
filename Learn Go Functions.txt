@@ -733,6 +733,97 @@ Disconnecting from the database.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Review
+--------
+Congrats! This lesson covered how to:
+
+	. Define a function.
+
+	. Understand scope rules.
+
+	. Return a value from a function.
+
+	. Add parameters to our function.
+
+	. Reuse code with functions.
+
+	. Return multiple values from a function.
+
+	. Defer events until the conclusion of a function.
+
+Functions are one of the most valuable patterns in code writing and reusability. Being comfortable writing and calling them will serve you well as you go on to build more complex 
+software.
+
+* Instructions
+--------------
+If you want to challenge yourself:
+
+	. Create a function that returns the area of any square.
+
+	. Create a function that returns both the area of a square and its perimeter.
+
+	. Create a function that contains a conditional statement and returns at different points of the conditional.
+
+main.go
+-------
+package main
+import (
+  "fmt"
+  "time"
+)
+
+func joinTwoStrings(prefix string, suffix string) string {
+  return prefix + suffix
+}
+
+func printOutDate() {
+  t := time.Now()
+  fmt.Println(t)
+}
+
+func waitForIt(message string) {
+  defer fmt.Println("Done!")
+  fmt.Println("Waiting")
+  fmt.Println("Waiting")
+  fmt.Println("Waiting")
+  fmt.Println(message)
+}
+
+func main() {
+  printOutDate()
+  waitForIt(joinTwoStrings("Hi", " there"))
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
