@@ -3,3 +3,31 @@
 You’ll be writing Go functions to perform calculations and build out an interstellar travel agency!
 
 As you work through the project, remember to check the output of your functions to ensure that you’re writing your functions correctly.
+
+* Creating our Interstellar Travel Agency
+-----------------------------------------
+1.
+Welcome to the Interstellar Travel Agency, where we get you there. We’ll need your help getting our luxury rocketships off the ground. One major concern our pilots always have is fuel. 
+We’ll need to create a function that tells our pilots how much fuel they currently have.
+
+Write a function called fuelGauge() which takes an int parameter, fuel. Inside the function print out a message telling the pilot how much fuel they have left using fmt.Println() and the 
+argument passed to fuel.
+
+It’s good practice to check the output of fuelGauge() (and later functions) in the main() function. Checking your functions as you code along will ensure that you’re writing the functions 
+correctly. (But remember to remove the function calls afterward!)
+
+Hint
+Use the following syntax to create a fuelGauge() function:
+
+func fuelGauge(fuel int) {
+  fmt.Println("You have", fuel, "gallons of fuel left!")
+}
+
+You could also use .Printf() like so:
+
+fmt.Printf("You have %d gallons of fuel left!", fuel)
+
+Call fuelGauge() with a number in main() to check what’s printed to the terminal. Delete the function call after you confirm it’s what you want.
+
+main.go
+-------
