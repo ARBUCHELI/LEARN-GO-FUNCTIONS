@@ -137,7 +137,62 @@ fmt.Println("Welcome to planet", planet)
 Call greetPlanet() inside main() to confirm that it prints the correct message. Since greetPlanet() doesn’t return anything, calling it should print out the string. Remember to delete the 
 function call afterward.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+8.
+Let’s also create a function called cantFly() doesn’t have any parameters and doesn’t return anything.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9.
+Within cantFly(), print out a message that says "We do not have the available fuel to fly there.".
+
+
+Hint
+Your message could look like:
+
+fmt.Println("We do not have the available fuel to fly there.")
+
+Call cantFly() inside main() to confirm that it prints the correct message. Since cantFly() doesn’t return anything, calling it should print out the string. Remember to delete the function call afterward.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* It's A Big Trip, All The Way Up
+---------------------------------
+
+10.
+Now lets create a function called flyToPlanet() that uses the previous functions we’ve built to coordinate our flight.
+
+flyToPlanet() should take two parameters: planet (a string) and fuel (an int) and should return an int, the remaining fuel.
+
+
+Hint
+Create a function with the following signature:
+
+func flyToPlanet(planet string, fuel int) int {
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11.
+Inside flyToPlanet() create the following variables fuelRemaining and fuelCost, both ints.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12.
+Set fuelRemaining equal to fuel.
+
+
+Hint
+We want to use fuelRemaining as our returned value. Let’s make it match the amount of fuel we have at the start of our trip. So far your flyToPlanet() function should look like this:
+
+func flyToPlanet(planet string, fuel int) int {
+  var fuelRemaining, fuelCost int
+  fuelRemaining = fuel
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
