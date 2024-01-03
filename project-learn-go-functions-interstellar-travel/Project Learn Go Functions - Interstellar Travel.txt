@@ -194,12 +194,205 @@ func flyToPlanet(planet string, fuel int) int {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+13.
+Now call calculateFuel() with planet as an argument. Save the result in fuelCost.
 
 
+Hint
+The function calculateFuel() returns an int, which we can store within fuelCost.
+
+fuelCost = calculateFuel(planet)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14.
+Check to see if fuelRemaining is greater than or equal to fuelCost. If it is, do the following:
+
+	. Call greetPlanet() with planet.
+
+	. Subtract fuelCost from fuelRemaining.
+
+Hint
+Use the following code to check fuelRemaining and fly to the given planet:
+
+if fuelRemaining >= fuelCost {
+  greetPlanet(planet)
+  fuelRemaining -= fuelCost
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15.
+If fuelCost is greater than fuelRemaining, call cantFly().
 
 
+Hint
+Use an else statement after your if statement:
+
+if fuelRemaining >= fuelCost {
+  greetPlanet(planet)
+  fuelRemaining -= fuelCost
+} else {
+  cantFly()
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16.
+Finally, return fuelRemaining!
 
 
+Hint
+You can test your function in main() using the following syntax:
+
+func main() {
+  fmt.Println(flyToPlanet("Mercury", 600000))
+}
+
+You should see:
+
+Welcome to planet Mercury
+100000
+
+Pass in different arguments and test your function! Remember, delete the function call after you’re done.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Fly Me To The Stars
+---------------------
+17.
+Inside our main() function, we want to fly to the skies! Let’s start by making a fuel int. This will be the amount of fuel in our current spacecraft!
+
+18.
+Set fuel equal to 1000000, the number of gallons of fuel in your tank. That’s a lot of gas!
+
+19.
+We’re gonna need all that gas where we’re going! Create a variable called planetChoice and assign a value of "Venus" to it.
+
+
+Hint
+There are two ways you can define a string:
+
+var planetChoice string
+planetChoice = "Venus"
+
+Or
+
+planetChoice := "Venus"
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+20.
+Call flyToPlanet() with planetChoice and fuel as arguments. Remember that flyToPlanet() returns our remaining fuel, so save that back into the variable fuel.
+
+
+Hint
+Update your fuel parameter and fly all the way to Venus in a single line of code!
+
+fuel = flyToPlanet(planetChoice, fuel)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+21.
+Check your gas tank! Call fuelGauge() with fuel after flying to Venus!
+
+
+Hint
+Your main() function should look like the following:
+
+func main() {
+  fuel := 1000000
+  planetChoice := "Venus"
+
+  fuel = flyToPlanet(planetChoice, fuel)
+  fuelGauge(fuel)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+22.
+Congrats! Good job getting us from liftoff through the skies!
+
+If you want to challenge yourself more:
+
+Add a variable that keeps track of which planet your spaceship is on.
+Create a function that returns your spaceship back to your home planet.
+Add more destinations and allow for traveling between different planets.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+main.go
+-------
+package main
+
+import "fmt"
+
+// Create the function fuelGauge() here
+func fuelGauge(fuel int) {
+  fmt.Println("You have", fuel, "gallons of fuel left!")
+}
+
+// Create the function calculateFuel() here
+func calculateFuel(planet string) int {
+  var fuel int;
+  switch planet {
+    case "Venus":
+      fuel = 300000
+      break
+    case "Mercury":
+      fuel = 500000
+      break
+    case "Mars":
+      fuel = 700000
+      break
+    default:
+      fuel = 0
+  }
+  fmt.Println("For going to", planet, "you need", fuel, "gallons of fuel!")
+  return fuel
+}
+
+// Create the function greetPlanet() here
+func greetPlanet(planet string) {
+  fmt.Println("Welcome to planet", planet)
+}
+
+// Create the function cantFly() here
+func cantFly() {
+  fmt.Println("We do not have the available fuel to fly there.")
+}
+
+// Create the function flyToPlanet() here
+func flyToPlanet(planet string, fuel int) int {
+ var fuelRemaining, fuelCost int
+ fuelRemaining = fuel
+ fuelCost = calculateFuel(planet)
+
+ if (fuelRemaining >= fuelCost) {
+  greetPlanet(planet)
+  fuelRemaining -= fuelCost
+ } else {
+  cantFly()
+ }
+ return fuelRemaining
+}
+
+func main() {
+  // Test your functions!
+  //fuelGauge(140)
+  //calculateFuel("Venus")
+  //greetPlanet("Venus")
+ //cantFly()
+  //fmt.Println(flyToPlanet("Mercury", 600000))
+  // Create `planetChoice` and `fuel`
+  //var fuel int
+  fuel = 1000000
+  var planetChoice string
+  planetChoice = "Venus"
+  // And then liftoff!
+  fuel = flyToPlanet(planetChoice, fuel)
+  fuelGauge(fuel)
+}
 
 
 
