@@ -4,6 +4,8 @@ You’ll be writing Go functions to perform calculations and build out an inters
 
 As you work through the project, remember to check the output of your functions to ensure that you’re writing your functions correctly.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 * Creating our Interstellar Travel Agency
 -----------------------------------------
 1.
@@ -29,5 +31,122 @@ fmt.Printf("You have %d gallons of fuel left!", fuel)
 
 Call fuelGauge() with a number in main() to check what’s printed to the terminal. Delete the function call after you confirm it’s what you want.
 
-main.go
--------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.
+Time to create a function that calculates the amount of fuel needed to go to a specific planet.
+
+Write a function calculateFuel() that has a single parameter, a string called planet and returns an int (this will be the amount of fuel needed to fly to that planet).
+
+
+Hint
+Use the following syntax to create a Go function:
+
+func calculateFuel(planet string) int {
+
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.
+Inside calculateFuel() create a variable called fuel, an int. This is the variable we’re going to return at the end of the function.
+
+
+Hint
+Create a variable with the following line of code within calculateFuel():
+
+var fuel int
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4.
+Depending on the planet, the amount of fuel required is going to change. Create a switch or a series of if & else statements to assign fuel in the following cases:
+
+	. Venus: 300000
+	. Mercury: 500000
+	. Mars: 700000
+	. If it’s not listed above: 0
+
+One example being, if the planet has a value of "Venus", then assign fuel a value of 300000. Use the information above to decide what to assign to fuel.
+
+
+Hint
+Assign fuel depending on the value inside planet:
+
+if planet == "Mercury" {
+  fuel = 500000
+} else if planet == "Venus" {
+  fuel = 300000
+} else if planet == "Mars" {
+  fuel = 700000
+}
+
+You can also use a switch statement:
+
+switch planet {
+case "Venus":
+  fuel = 300000
+// Rest of the case clauses...
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5.
+Return fuel at the end of the function.
+
+Check that calculateFuel() is working correctly in main() (then remove the function call after you know it works).
+
+
+Hint
+In main(), use a print statement to check calculateFuel() with an argument:
+
+func main() {
+  fmt.Println(calculateFuel("Venus"))
+}
+
+The above should print out 300000. If it doesn’t then you’ll need to edit your function! Then check with all the other planets and an argument that contains a string not contained in our 
+if...else or switch statement.
+
+Remove these function calls when you’re done.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* It's a Gas: Messaging and Errors
+----------------------------------
+6.
+Let’s create a messaging service that lets folks know where they’re headed. Create a function called greetPlanet(), this function should take a single parameter, planet, a string.
+
+
+Hint
+Use the following syntax:
+
+func greetPlanet(planet string) {
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7.
+Inside greetPlanet() use a print statement to inform your passengers of where they are by providing a message welcoming them to their destination.
+
+
+Hint
+Your message could look like:
+
+fmt.Println("Welcome to planet", planet)
+
+Call greetPlanet() inside main() to confirm that it prints the correct message. Since greetPlanet() doesn’t return anything, calling it should print out the string. Remember to delete the 
+function call afterward.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
