@@ -1,0 +1,19 @@
+# Next Steps
+------------
+You’ve completed Learn Go: Functions! What’s next?
+
+Congratulations, you’ve successfully completed the Learn Go: Functions course! You’ve learned how to create modular programs with functions.
+
+Your learning journey into the Go programming language isn’t over yet! Here is our roadmap to mastering Go:
+
+	. Learn Go: Fundamentals
+
+	. Learn Go: Conditionals
+
+	. Learn Go: Functions <– Completed!
+
+	. Learn Go: Loops and Arrays <– Up next!
+
+	. Learn Go: Maps and Structs
+
+Once again, congratulations on finishing the Learn Go: Functions course! We are excited to see what you accomplish next.
