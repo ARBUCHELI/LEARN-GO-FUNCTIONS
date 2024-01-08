@@ -1,0 +1,34 @@
+# Learn Go: Next Steps
+----------------------
+You’ve completed the Learn Go course! What’s next?
+
+Congratulations, you’ve successfully completed the Learn Go course! In this course, you learned the fundamentals of the Go language. So far you’ve learned how to:
+
+	. Compile a Go program
+	. Create Go variables
+	. Use the fmt package
+	. Make conditional statements
+	. Create Go functions
+
+Your learning journey isn’t over yet. There are plenty of other topics you can learn after the basics of Go. Here are our recommendations for next steps:
+
+* Learn Go: Loops, Arrays, Maps, and Structs
+--------------------------------------------
+In this follow up to Learn Go you can learn more complex ways to program in Go! Topics include loops, arrays, maps, and structs.
+
+* Git & GitHub
+--------------
+Version control is an essential piece of managing our Go programs. In Learn Git & GitHub, you will learn how to add version control to your projects by using Git and GitHub.
+
+* Cybersecurity
+---------------
+The programs we write in Go need protecting! In Introduction to Cybersecurity, you will learn the basic concepts needed to identify and protect against common cyber threats and attacks.
+
+* Introduction to DevOps
+------------------------
+Go is the defacto language of DevOps, a culture of collaboration between developers and infrastructure teams. In Introduction to DevOps you will learn about this culture that is supported 
+by practices and tools.
+
+* Contribute to Codecademy Docs
+-------------------------------
+Want to build your portfolio and help others? Contribute to Codecademy Docs! You can go to our Contribution Guide to get started.
