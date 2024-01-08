@@ -303,7 +303,29 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Review
+--------
+Congrats! You can now change variable values even when the variables are out of scope!
 
+The following concepts were covered in this lesson:
+
+	. Go is a pass-by-value language.
+	. An address is where a value is stored.
+	. To find an address of a variable, use the & operator before a variable.
+	. Pointers are variables that store an address.
+	. A pointer is specific to what type of address it can store.
+	. The * operator can be used to assign a pointer the type of the value its address holds.
+	. The * operator can also be used to dereference a pointer and assign a new value.
+
+* Instructions
+--------------
+If you want to practice more with pointers and addresses:
+
+	. Create a function that changes a boolean value from a different scope.
+
+	. Create a function that changes a float value from a different scope.
+
+	. Find the zero value of a pointer that is initialized but hasn’t been assigned a value.
 
 
 
