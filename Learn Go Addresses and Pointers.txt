@@ -1,0 +1,42 @@
+# LEARN GO: ADDRESSES AND POINTERS
+----------------------------------
+
+* The Point of Pointers and Addresses
+-------------------------------------
+Go is a pass-by-value language. In other words, we’re passing functions the value of an argument. In a technical sense, when we’re calling a function with an argument, the Go compiler is 
+strictly using the value of the argument rather than the argument itself. Because of this feature (pass-by-value), the changes that take place in our function, stay within that function.
+
+Picture a teacher with a classroom of students and the teacher needs the students to complete a worksheet. The teacher will have the original copy of the worksheet and make copies for 
+his/her students to write on, but the students are not directly writing on the teacher’s copy.
+
+But, we do have the ability to change values from different scopes. To do so, we need to make use of:
+
+	. addresses
+	. pointers
+	. dereferencing
+
+Now that we know what topics we need to reference, let’s quickly address this situation and get to the point!
+
+* Instructions
+--------------
+Read through the code provided and think about what is supposed to be printed out. Does the value of x change? In the next couple of exercises, we’ll explore the why.
+
+main.go
+-------
+package main
+
+import "fmt"
+
+func addHundred(num int) {
+  num += 100
+}
+
+func main() {
+  x := 1
+  
+  addHundred(x)
+  
+  fmt.Println(x) 
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
