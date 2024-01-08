@@ -207,6 +207,132 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Changing Values in Different Scopes
+-------------------------------------
+Using our knowledge of addresses, pointers, and dereferencing, let’s return to our initial problem: How can we change the value of a variable when we’re in a different scope? Let’s take a 
+look at the code again:
+
+func addHundred(num int) {
+  num += 100
+}
+
+func main() {
+  x := 1
+  addHundred(x)
+  fmt.Println(x) // Prints 1
+}
+
+Even though we call addHundred(x), the value of x doesn’t change! Why is that?
+
+Remember, Go is a pass-by-value language. When we call addHundred(x) we’re providing addHundred() with a value of 1. We’re not actually providing the address of x for addHundred() to go 
+in and change the value stored there.
+
+If we want to change the value of x using a function, we’re going to need to first change our function:
+
+func addHundred (numPtr *int) {
+  *numPtr += 100
+}
+
+Our new function now has a parameter of a pointer for an integer. By passing the value of a pointer (which is an address) to addHundred(), we can also dereference the address and add 100 
+to its value. But now that addHundred() expects a pointer for an argument, we’re also going to need to change our main()! The complete code is as follows:
+
+func addHundred (numPtr *int) {
+  *numPtr += 100
+}
+
+func main() {
+  x := 1
+  addHundred(&x)
+  fmt.Println(x) // Prints 101
+}
+
+Since addHundred() expects a pointer (and pointers are variables that store an address) the final touch was to provide addHundred() the address of x. With that, x is now 101!
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+In main.go, we have two functions, main() and brainwash(). We want brainwash() to change the value of a string to "Beep Boop".
+
+Change brainwash()‘s parameter to be a pointer for a string.
+
+
+Hint
+Here is an example of a function with a parameter that is a pointer for a string.
+
+func someEx (strPtr *string) {
+  // ...
+}
+
+Checkpoint 2 Passed
+2.
+Inside brainwash(), we want to reassign saying to have a value of "Beep Boop". To do that, use the * operator on saying.
+
+
+Hint
+To dereference a pointer, use the * operator before the name of the pointer.
+
+Checkpoint 3 Passed
+3.
+In the main() function, call brainwash() with the address of greeting as the argument. Make sure to add this before the print statement at the bottom of main().
+
+
+Hint
+To get the address of greeting, use the & operator like so: &greeting.
+
+main.go
+-------
+package main
+
+import "fmt"
+
+// Change brainwash to have a pointer parameter
+func brainwash(saying *string) {
+	// Dereference saying below: 
+	*saying = "Beep Boop."
+}
+
+func main() {
+	greeting := "Hello there!"
+	
+	// Call your brainwash() below:
+	brainwash(&greeting)
+	
+	fmt.Println("greeting is now:", greeting)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
