@@ -40,3 +40,114 @@ func main() {
 }
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Addresses
+-----------
+Picture being in class and taking part in a lesson. When we hear an important detail, we write it down in our notebook for reference later. This same idea of storing important information 
+somewhere is the reason why we declare variables in Go. But instead of writing information down in a notebook, a computer sets aside some space in its memory to store the value. The space 
+that the computer allocates is called an address. Each address is marked as a unique numerical value.
+
+Every time we use a variable, what we’re doing is retrieving the value stored at the variable’s address. Here’s a simple visualization:
+
+Go diagram showing memory addresses with corresponding hexadecimal values for the addresses
+
+To find a variable’s address we use the & operator followed by the variable name, like so:
+
+x := "My very first address"
+fmt.Println(&x) // Prints 0x414020
+
+When we see the 0x prefix, this means that the number is in formatted in hexadecimal, which is a way of representing 16 digit numbers. Thus, the 0x414020 is actually the address of x in hexadecimal format.
+
+Let’s print out the address of a variable for ourselves.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Given the treasure variable, print out the address of the variable.
+
+
+Hint
+To find the address, use the & operator the name of the variable, like so:
+
+x := "Hello!"
+fmt.Println(&x)
+
+main.go
+-------
+package main
+
+import "fmt"
+
+func main() {
+	treasure := "The friends we make along the way."
+	
+	// Add your code below:
+fmt.Println(&treasure)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
